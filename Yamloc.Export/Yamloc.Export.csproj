@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- NuGet package metadata -->
+		<PackageId>Yamloc.Export</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>C</Authors>
+		<Description>Build-time export tooling for Yamloc: scans a compiled assembly's IL (via Mono.Cecil) and generates localizable YAML files. Not needed at run time - see the Yamloc package for the Setup/Localize/T APIs.</Description>
+		<Copyright>Copyright (c) 2026 C</Copyright>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/C-dev3/Yamloc</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/C-dev3/Yamloc</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>localization;yaml;i18n;l10n;export;tooling</PackageTags>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- Symbols / source link, so consumers can step into Yamloc.Export's source while debugging -->
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>True</PublishRepositoryUrl>
+		<EmbedUntrackedSources>True</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">True</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400" PrivateAssets="All" />
+		<PackageReference Include="Mono.Cecil" Version="0.11.6" />
+		<PackageReference Include="YamlDotNet" Version="18.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- ProjectReference for local builds; when packing for NuGet this also pulls in
+         Yamloc as a package dependency of Yamloc.Export automatically. -->
+		<ProjectReference Include="..\Yamloc\Yamloc.csproj" />
+	</ItemGroup>
+
+</Project>

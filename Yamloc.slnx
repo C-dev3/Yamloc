@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/ソリューション項目/">
+    <File Path="LICENSE" />
+    <File Path="README.ja.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Yamloc.Export.Tool/Yamloc.Export.Tool.csproj" Id="3dbf91a1-9244-4b8a-b774-dffc49aea0fa" />
+  <Project Path="Yamloc.Export/Yamloc.Export.csproj" />
+  <Project Path="Yamloc/Yamloc.csproj" />
+</Solution>
