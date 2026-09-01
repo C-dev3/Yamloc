@@ -62,6 +62,7 @@ namespace Yamloc.Export
             // allocate a new string on every += inside the instruction loop below.
             var debugOutput = new StringBuilder();
             var outList = new Dictionary<string, LocEntry>();
+            var rawFallbackMessages = new Dictionary<string, string>();
 
             var assemblyDef = AssemblyDefinition.ReadAssembly(assemblyPath);
             var assemblyName = assemblyDef.Name.Name;
@@ -160,7 +161,7 @@ namespace Yamloc.Export
                             // over outList for every instruction that references the same key.
                             if (outList.TryGetValue(key, out var existingOutEntry))
                             {
-                                if (existingOutEntry.Message != entry.Message)
+                                if (rawFallbackMessages[key] != entry.Message)
                                 {
                                     throw new Exception(
                                         $"Message with key {key} has previous appearance but other fallback text in {entry.Description} in {tm.t.FullName}::{tm.m.FullName}");
@@ -168,6 +169,8 @@ namespace Yamloc.Export
                             }
                             else
                             {
+                                rawFallbackMessages[key] = entry.Message;
+
                                 if (existing.TryGetValue(key, out var existingEntry)
                                     && !string.IsNullOrEmpty(existingEntry.Message))
                                 {
