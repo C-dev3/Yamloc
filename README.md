@@ -16,20 +16,20 @@
 Yamloc/
 ├── Yamloc.sln
 ├── LICENSE
-├── README.md                  ← Japanese solution README
-├── README.en.md                ← this file
+├── README.md                  ← このファイル（ソリューション全体の説明）
+├── README.en.md
 │
-├── Yamloc/                    ← run-time library
+├── Yamloc/                    ← 実行時ライブラリ本体
 │   ├── Yamloc.csproj
 │   ├── Loc.cs
 │   ├── Entry.cs
-│   └── README.md              ← NuGet package readme (bundled into the nupkg)
+│   └── README.md              ← NuGetパッケージ詳細（nupkgに同梱）
 │
-├── Yamloc.Export/             ← build-time export tooling
+├── Yamloc.Export/             ← ビルド時エクスポートツール
 │   ├── Yamloc.Export.csproj
 │   └── LocExporter.cs
 │
-└── Yamloc.Export.Tools/
+└── Yamloc.Export.Tools/       ← エクスポートツールCLI
     ├── Yamloc.Export.Tool.csproj
     └── Program.cs
 ```

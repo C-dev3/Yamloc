@@ -29,7 +29,7 @@ Yamloc/
 │   ├── Yamloc.Export.csproj
 │   └── LocExporter.cs
 │
-└── Yamloc.Export.Tools/
+└── Yamloc.Export.Tools/       ← cli for export tooling
     ├── Yamloc.Export.Tool.csproj
     └── Program.cs
 ```
