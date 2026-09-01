@@ -1,6 +1,10 @@
+[![NuGet Version](https://img.shields.io/nuget/v/Yamloc)](https://www.nuget.org/packages/Yamloc/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Yamloc)](https://www.nuget.org/packages/Yamloc/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Yamloc
 
-[CheapLoc](https://github.com/goatcorp/Dalamud.CheapLoc) にインスパイアされた、YAML ベースの軽量な .NET ローカライゼーションライブラリです。
+[CheapLoc](https://github.com/goaaats/CheapLoc) にインスパイアされた、YAML ベースの軽量な .NET ローカライゼーションライブラリです。
 
 [English README is here](./README.en.md)
 
@@ -12,18 +16,22 @@
 Yamloc/
 ├── Yamloc.sln
 ├── LICENSE
-├── README.md                  ← このファイル（ソリューション全体の説明）
-├── README.en.md
+├── README.md                  ← Japanese solution README
+├── README.en.md                ← this file
 │
-├── Yamloc/                    ← 実行時ライブラリ本体
+├── Yamloc/                    ← run-time library
 │   ├── Yamloc.csproj
 │   ├── Loc.cs
 │   ├── Entry.cs
-│   └── README.md              ← NuGetパッケージ詳細（nupkgに同梱）
+│   └── README.md              ← NuGet package readme (bundled into the nupkg)
 │
-└── Yamloc.Export/             ← ビルド時エクスポートツール
-    ├── Yamloc.Export.csproj
-    └── LocExporter.cs
+├── Yamloc.Export/             ← build-time export tooling
+│   ├── Yamloc.Export.csproj
+│   └── LocExporter.cs
+│
+└── Yamloc.Export.Tools/
+    ├── Yamloc.Export.Tool.csproj
+    └── Program.cs
 ```
 
 | パッケージ | 概要 | 詳細 |

@@ -1,6 +1,10 @@
+[![NuGet Version](https://img.shields.io/nuget/v/Yamloc)](https://www.nuget.org/packages/Yamloc/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Yamloc)](https://www.nuget.org/packages/Yamloc/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Yamloc
 
-A lightweight, YAML-based .NET localization library inspired by [CheapLoc](https://github.com/goatcorp/Dalamud.CheapLoc).
+A lightweight, YAML-based .NET localization library inspired by [CheapLoc](https://github.com/goaaats/CheapLoc).
 
 [日本語版 README はこちら](./README.md)
 
@@ -21,9 +25,13 @@ Yamloc/
 │   ├── Entry.cs
 │   └── README.md              ← NuGet package readme (bundled into the nupkg)
 │
-└── Yamloc.Export/             ← build-time export tooling
-    ├── Yamloc.Export.csproj
-    └── LocExporter.cs
+├── Yamloc.Export/             ← build-time export tooling
+│   ├── Yamloc.Export.csproj
+│   └── LocExporter.cs
+│
+└── Yamloc.Export.Tools/
+    ├── Yamloc.Export.Tool.csproj
+    └── Program.cs
 ```
 
 | Package | Overview | Details |
